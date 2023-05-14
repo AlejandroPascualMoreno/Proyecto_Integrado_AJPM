@@ -40,12 +40,12 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     <title>Inicio de sesión</title>
 </head>
 <body>
-    <div>
+    <div class= formulario_inicio>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <h2 class="textosesion">Inicio de sesión</h2>
        <input type="email" name="user" id="email" placeholder="Correo electrónico"><br>
        <br><input type="password" name="pass" placeholder="Contraseña" id="password" ><br>
-       <br><button type="submit" class="botonlogin">Iniciar sesión</button>
+       <br><button type="submit" class="botonlogin_inicio">Iniciar sesión</button>
     </form>
     </div>
 </body>

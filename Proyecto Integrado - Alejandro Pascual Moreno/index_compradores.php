@@ -1,6 +1,22 @@
 <?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proyecto_integrado";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Conexión fallida: " . mysqli_connect_error());
+}
+
+// Consulta para seleccionar todas las imágenes de la tabla 'imagenes'
+$sql = "SELECT * FROM imagenes";
+$result = mysqli_query($conn, $sql);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,55 +28,75 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Inicio</title>
 </head>
-<body class="indexbody">
-<div class="divbody">
-    <a href="index_compradores.php"><img class="logo" src="images/WePop2.png" width="100"></a>
+<body>
+<div>
+    <a href="index.php"><img class="logo" src="images/WePop2.png" width="100"></a>
 </div>
-    <p>Hola</p>
+    <h4>
+    <?php  
+  //  $sqluser = "SELECT user FROM login_registro";
+  //  $resultuser = mysqli_query($conn, $sqluser);
+  //  $fila = mysqli_fetch_array($resultuser);
+  //  echo "¡Hola " . $fila["user"] . "!" . "<br>";
+   
+    ?>
+    </h4>
     <hr>
     <h2>Encuentra aquí el servicio ideal</h2>
     <h5>sin tener que salir de casa</h5>
-    <div class="barra">
-    <div class="input-group">
-        <div class="form-outline">
+    <div class="barrabusqueda">
           <input type="search" id="form1" class="form-control" size="30"/>
-        </div>
-        <button type="button" class="btn btn-primary">
-          <i class="fas fa-search"></i>
+          <button type="submit"><i class="fas fa-search"></i></button>
         </button>
       </div>
     </div>
-    <div class="category">
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">Catering</li>
-        <li class="list-group-item">Música</li>
-        <li class="list-group-item">Flores</li>
-        <li class="list-group-item">Fotógrafo</li>
-        <li class="list-group-item">Haciendas</li>
-        <li class="list-group-item">Estilistas</li>
-    </ul>
-    </div>
     <div class="container">
-      <div class="productos">
-        <img src="images/catering1.png" width="250px" height="150px">
-        <img src="images/catering2.jpg" width="230px" height="150px">
-        <img src="images/catering3.jpg" width="240px" height="150px">
-        <img src="images/catering4.jpg" width="300px" height="150px">
-        <img src="images/catering5.jpg" width="250px" height="150px">
-        <hr>
-        <img src="images/dj1.jpg" width="250px" height="150px">
-        <img src="images/dj2.jpeg" width="250px" height="150px">
-        <img src="images/dj3.jpeg" width="250px" height="150px">
-        <img src="images/dj4.jpeg" width="250px" height="150px">
-        <img src="images/dj5.jpeg" width="250px" height="150px">
-        <hr>
-        <img src="images/flor1.jpeg" width="250px" height="150px">
-        <img src="images/flor2.jpg" width="250px" height="150px">
-        <img src="images/flor3.jpg" width="250px" height="150px">
-        <img src="images/flor4.jpg" width="250px" height="150px">
-        <img src="images/flor5.jpeg" width="250px" height="150px">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+    <ul class="list-inline text-center">
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-star"></i> Sastrería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-heart"></i> Zapatería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-check"></i> Peluquería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-envelope"></i> Maquillaje</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-comment"></i> Joyería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-bell"></i> Fotografía</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-book"></i> Haciendas</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-rocket"></i> Catering</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+    <div class="container mt-5">
+      <div class="row">
+        <?php
+        // Iterar a través de cada imagen y mostrarla en pantalla
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo '<div class="col-md-4 mb-3">';
+          echo '<div class="card">';
+          echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['images']).'" alt="'.$row['category'].'">';
+          echo '<div class="card-body">';
+          echo '<h5 class="card-title">'.$row['category'].'</h5>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+        }
+        ?>
+        </div>
+</div>
+<?php
+// Cerrar la conexión a la base de datos
+mysqli_close($conn);
+?>
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisi ante. Morbi ac leo vitae est euismod tincidunt id ac elit. Sed sit amet lorem lacus. Fusce eu urna ligula. Mauris porttitor augue ac neque sodales, at finibus nisl iaculis. Donec euismod risus vel diam ultricies, vel varius ex consectetur. Integer in tellus eget odio venenatis semper.</p>
       </div>
     </div>
-   
+  </div>
+</footer>
 </body>
 </html>
+        

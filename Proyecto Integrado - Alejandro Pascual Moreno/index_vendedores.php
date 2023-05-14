@@ -1,42 +1,76 @@
 <?php
+// Configuración de la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proyecto_integrado";
+
+// Conexión a la base de datos
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar si la conexión fue exitosa
+if ($conn->connect_error) {
+    die("La conexión a la base de datos falló: " . $conn->connect_error);
+}
+
+// Verificar si se ha enviado una imagen
+if (isset($_POST['submit'])) {
+    $file = $_FILES['image'];
+
+    // Obtener la información de la imagen
+    $fileName = $file['name'];
+    $fileType = $file['type'];
+    $fileTempName = $file['tmp_name'];
+    $fileError = $file['error'];
+    $fileSize = $file['size'];
+
+    // Verificar si la imagen es válida
+    $allowedTypes = array('image/jpeg', 'image/png', 'image/gif');
+    if (in_array($fileType, $allowedTypes)) {
+        if ($fileError === 0) {
+            if ($fileSize < 5000000) {
+                // Convertir la imagen a una cadena de bytes para guardarla en la base de datos
+                $imageData = addslashes(file_get_contents($fileTempName));
+                $category = $_POST['category'];
+
+                // Insertar la imagen y su categoría en la base de datos
+                $sql = "INSERT INTO imagenes (images, category) VALUES ('$imageData', '$category')";
+                if ($conn->query($sql) === TRUE) {
+                    echo "La imagen se ha subido correctamente";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            } else {
+                echo "La imagen es demasiado grande. El tamaño máximo permitido es de 5MB";
+            }
+        } else {
+            echo "Ha ocurrido un error al subir la imagen. Por favor, intenta de nuevo";
+        }
+    } else {
+        echo "El tipo de archivo no está permitido. Por favor, sube una imagen en formato JPEG, PNG o GIF";
+    }
+}
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/9731384117.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Inicio</title>
+    <title>Subir imagen a la base de datos</title>
 </head>
-<body class="indexbody">
-<div class="divbody">
-    <a href="index_vendedores.php"><img class="logo" src="images/WePop2.png" width="100"></a>
-</div>
-    <hr>
-    <h2>Publica aquí lo que los demás necesitan</h2>
-    <h5>y sácale partido</h5>
-   
-<div class="divbody">
-    <form>
-        <select name="categoria" id="categoria">
-            <option disabled selected>Selecciona una categoría</option>
-            <option value="Catering">Catering</option>
-            <option value="Musica">Música</option>
-            <option value="Flores">Flores</option>
-            <option value="Fotografia">Fotografía</option>
-            <option value="Haciendas">Haciendas</option>
-            <option value="Estilistas">Estilistas</option>
-        </select>
-    <input type="file">
-    <button type="submit">Suba su servicio</button>
-    </form>
+<body>
     
-</div>
-   
-  
-   
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required><br>
+        <label for="category">Categoría:</label>
+        <select id="category" name="category">
+            <option value="catering">Catering</option>
+            <option value="musica">Música</option>
+            <option value="flores">Flores</option>
+            <option value="fotografo">Fotógrafo</option>
+            <option value="haciendas">Haciendas</option>
+            <option value="estilistas">Estilistas</option>
+        </select><br>
+        <button type="submit" name="submit">Subir imagen</button>
+    </form>
 </body>
 </html>

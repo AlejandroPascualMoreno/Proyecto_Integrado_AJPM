@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Regístrate</title>
 </head>
 <body>
-    <div>
+    <div class= formulario_inicio>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <h2 class="textosesion">Regístrate</h2>
        <input type="email" name="user" id="email" placeholder="Correo electrónico"><br>

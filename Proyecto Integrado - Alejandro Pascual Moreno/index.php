@@ -1,5 +1,22 @@
 <?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proyecto_integrado";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Conexión fallida: " . mysqli_connect_error());
+}
+
+// Consulta para seleccionar todas las imágenes de la tabla 'imagenes'
+$sql = "SELECT * FROM imagenes";
+$result = mysqli_query($conn, $sql);
+
 ?>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,40 +48,38 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
     <ul class="list-inline text-center">
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-star"></i> Elemento 1</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-heart"></i> Elemento 2</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-check"></i> Elemento 3</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-envelope"></i> Elemento 4</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-comment"></i> Elemento 5</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-bell"></i> Elemento 6</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-book"></i> Elemento 7</li>
-  <li class="list-inline-item border-0 mx-3"><i class="fa fa-rocket"></i> Elemento 8</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-star"></i> Sastrería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-heart"></i> Zapatería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-check"></i> Peluquería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-envelope"></i> Maquillaje</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-comment"></i> Joyería</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-bell"></i> Fotografía</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-book"></i> Haciendas</li>
+  <li class="list-inline-item border-0 mx-3"><i class="fa fa-rocket"></i> Catering</li>
 </ul>
 
     </div>
   </div>
 </div>
-    <div class="container">
-      <div class="productos">
-        <img src="images/catering1.png" width="250px" height="150px">
-        <img src="images/catering2.jpg" width="230px" height="150px">
-        <img src="images/catering3.jpg" width="240px" height="150px">
-        <img src="images/catering4.jpg" width="300px" height="150px">
-        <img src="images/catering5.jpg" width="250px" height="150px">
-        <hr>
-        <img src="images/dj1.jpg" width="250px" height="150px">
-        <img src="images/dj2.jpeg" width="250px" height="150px">
-        <img src="images/dj3.jpeg" width="250px" height="150px">
-        <img src="images/dj4.jpeg" width="250px" height="150px">
-        <img src="images/dj5.jpeg" width="250px" height="150px">
-        <hr>
-        <img src="images/flor1.jpeg" width="250px" height="150px">
-        <img src="images/flor2.jpg" width="250px" height="150px">
-        <img src="images/flor3.jpg" width="250px" height="150px">
-        <img src="images/flor4.jpg" width="250px" height="150px">
-        <img src="images/flor5.jpeg" width="250px" height="150px">
-      </div>
-    </div>
+    <?php
+        // Iterar a través de cada imagen y mostrarla en pantalla
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo '<div class="col-md-4 mb-3">';
+          echo '<div class="card">';
+          echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['images']).'" alt="'.$row['category'].'">';
+          echo '<div class="card-body">';
+          echo '<h5 class="card-title">'.$row['category'].'</h5>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+        }
+        ?>
+        </div>
+</div>
+<?php
+// Cerrar la conexión a la base de datos
+mysqli_close($conn);
+?>
     <footer>
   <div class="container">
     <div class="row">
