@@ -1,0 +1,438 @@
+
+@media (max-width:915px){
+    .barra{
+        text-align: center;
+        display: block;
+        margin: 0 aut;
+    }
+   
+    h2{
+        text-align: center;
+    }
+    h5{
+        text-align: center;
+    }
+
+    #email{
+        margin-top: 50%;
+   
+    }
+    .loginbody{
+        background-color: rgb(246, 206, 216);
+    }
+
+    .logo{
+        width: 50px;
+        text-align: center;
+    }
+
+    .botones{
+        display: none;
+     }
+  }
+
+
+
+  @media (min-width:1080px){
+
+  .barra{
+    
+    text-align: center;
+    align-items: center;
+
+    margin-top: 2%;
+    margin-bottom: 1%;
+   
+}
+
+p{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
+
+.botones{
+   display: block;
+   margin: 0 auto;
+   text-align: right;
+   margin-right: 10%;
+   
+}
+.logo{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+#email{
+    margin-top: 1%;
+    text-align: center;
+}
+#password{
+    text-align: center;
+}
+.botonlogin{
+    text-align: center;
+}
+
+.botonregistro{
+    text-align: center;
+}
+.loginbody{
+    background-color: rgb(246, 206, 216);
+}
+.textosesion{
+    margin-top: 2%;
+    text-align: center;
+}
+#cliente{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.category{
+    display: inline;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.col-md-12{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.list-inline-item{
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, opacity 0.3s ease;
+}
+
+.list-inline-item:hover {
+    cursor: pointer;
+  }
+  
+  .list-inline-item:hover,
+  .list-inline-item:focus {
+
+    transform: scale(1.05);
+    color:  #ff9be4 !important;
+}
+
+
+
+.botonlogin {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ff9be4;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+    margin-left: 1%;
+  }
+  
+  .botonlogin:hover {
+    background-color: #fff;
+    color: #ff9be4;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.8);
+    transform: scale(1.1);
+  }
+
+  .botonregistro {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ec6767;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .botonregistro:hover {
+    background-color: #fff;
+    color: #ff4242;
+    box-shadow: 0 8px 16px rgba(166, 60, 60, 0.8);
+    transform: scale(1.1);
+  }
+  .botoncerrar{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ec6767;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+    margin-left: 1%;
+    
+  }
+
+  .botoncerrar:hover{
+    background-color: #fff;
+    color: #ff4242;
+    box-shadow: 0 8px 16px rgba(166, 60, 60, 0.8);
+    transform: scale(1.1);
+  }
+  .botonsubir{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ec6767;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+    margin-left: 1%;
+    
+  }
+
+  .botonsubir:hover{
+    background-color: #fff;
+    color: #ff4242;
+    box-shadow: 0 8px 16px rgba(166, 60, 60, 0.8);
+    transform: scale(1.1);
+  }
+
+  .botoncontactar{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ec6767;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+    
+    margin-top: 10%;
+    
+  }
+
+  .botoncontactar:hover{
+    background-color: #fff;
+    color: #ff4242;
+    box-shadow: 0 8px 16px rgba(166, 60, 60, 0.8);
+    transform: scale(1.1);
+  }
+
+  .barrabusqueda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffbfee;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  
+  .barrabusqueda input[type="search"] {
+    border: none;
+    font-size: 15px;
+    padding: 10px 20px;
+    flex: 1;
+    border-radius: 20px;
+  }
+  
+  .barrabusqueda button[type="submit"] {
+    background-color: #ff4242;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .barrabusqueda button[type="submit"]:hover {
+    transform: scale(0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  footer {
+    background-color: #ffbfee;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 54px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #ff5722;
+}
+
+footer ul li a i {
+    margin-right: 5px;
+}
+
+  .formulario_inicio{
+    text-align: center;
+  }
+
+  .botonlogin_inicio {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 2px solid rgb(108, 108, 108);
+    background-color: #ff9be4;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.4);
+    transition: all 0.3s ease;
+    
+  }
+  
+  .botonlogin_inicio:hover {
+    background-color: #fff;
+    color: #ff9be4;
+    box-shadow: 0 8px 16px rgba(255, 155, 228, 0.8);
+    transform: scale(1.1);
+  }
+
+  input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="text"] {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #7d6c78;
+  box-shadow: 0 0 5px #7d6c78;
+}
+
+select {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #7d6c78;
+  
+  
+}
+
+.custom-img {
+  width: 400px; 
+  height: 400px; 
+  object-fit: cover; 
+}
+
+.formuvendedor{
+  text-align: center;
+}
+
+.imagenventa{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.subirboton{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.textogestion{
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+}
+
+@media (max-width: 576px) {
+  .list-inline-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 577px) {
+ .list-inline-item {
+    flex: 0 0 auto;
+    max-width: none;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .list-inline-item {
+    font-size: 18px;
+  }
+  .custom-img {
+    width: 800px; 
+    height: 250px; 
+    object-fit: cover; 
+  }
+}
