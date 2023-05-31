@@ -23,6 +23,7 @@ $productosResult = $conn->query($productosSql);
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="images\WePop3.png">
     <script src="https://kit.fontawesome.com/9731384117.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -54,7 +55,7 @@ $productosResult = $conn->query($productosSql);
         <img src="images/WePop2.png" alt="Logo de la empresa" width="300">
     </div>
 
-    <h2 class="textogestion">Listado de tus productos:</h2>
+    <h2 class="textogestion">Listado de tus servicios:</h2>
 
     <div class="container">
         <div class="row">
@@ -74,7 +75,7 @@ $productosResult = $conn->query($productosSql);
                     echo '</div>';
                 }
             } else {
-                echo 'No se encontraron productos para este vendedor.';
+                echo 'No se encontraron servicios para este vendedor.';
             }
             ?>
         </div>

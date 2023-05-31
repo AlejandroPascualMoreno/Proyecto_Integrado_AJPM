@@ -52,6 +52,7 @@ $messages = $stmt->fetchAll();
 <head>
     <title>Chat en PHP</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images\WePop3.png">
 </head>
 <body>
 <style>

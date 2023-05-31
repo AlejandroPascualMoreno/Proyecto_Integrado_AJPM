@@ -282,47 +282,57 @@ h5{
   }
   footer {
     background-color: #ffbfee;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     padding-top: 54px;
-}
-
-footer p {
+    box-sizing: border-box; 
+    text-align: center; 
+  }
+  
+  footer p {
     margin: 0;
-}
-
-footer ul {
+  }
+  
+  footer ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
-}
-
-footer ul li {
+  }
+  
+  footer ul li {
     display: inline-block;
     margin-right: 10px;
-}
-
-footer ul li:last-child {
+  }
+  
+  footer ul li:last-child {
     margin-right: 0;
-}
-
-footer ul li a {
+  }
+  
+  footer ul li a {
     text-decoration: none;
     color: #333;
     font-size: 14px;
     transition: color 0.3s ease;
-}
-
-footer ul li a:hover {
+  }
+  
+  footer ul li a:hover {
     color: #ff5722;
-}
-
-footer ul li a i {
+  }
+  
+  footer ul li a i {
     margin-right: 5px;
-}
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    footer ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
 
   .formulario_inicio{
     text-align: center;
